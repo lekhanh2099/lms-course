@@ -69,8 +69,6 @@ async function AdminLink() {
   allData: true,
  });
 
- console.log("This is something", { user });
-
  if (!canAccessAdminPages(user)) return null;
 
  return (

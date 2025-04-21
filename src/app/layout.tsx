@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-// import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
  title: "Create Next App",
@@ -18,7 +18,7 @@ export default function RootLayout({
    <html className="mdl-js">
     <body className="antialiased">
      {children}
-     {/* <Toaster /> */}
+     <Toaster />
     </body>
    </html>
   </ClerkProvider>

@@ -33,7 +33,6 @@ import { getCourseSectionCourseTag } from "@/courseSections/db/cache";
 import { getLessonCourseTag } from "@/features/lessons/db/cache/lessons";
 import { LessonFormDialog } from "@/features/lessons/components/LessonFormDialog";
 import { SortableLessonList } from "@/features/lessons/components/SortableLessonList";
-// import { SectionFormDialog } from "@/features/courseSections/components/SectionFormDialog";
 
 export default async function CourseEditPage({
  params,

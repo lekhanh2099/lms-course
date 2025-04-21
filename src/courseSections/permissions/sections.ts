@@ -1,28 +1,31 @@
-import { CourseSectionTable, UserRole } from "@/drizzle/schema"
-import { eq } from "drizzle-orm"
+import { CourseSectionTable, UserRole } from "@/drizzle/schema";
+import { eq } from "drizzle-orm";
 
 export function canCreateCourseSections({
-  role,
+ role,
 }: {
-  role: UserRole | undefined
+ role: UserRole | undefined;
 }) {
-  return role === "admin"
+ return role === "admin";
 }
 
 export function canUpdateCourseSections({
-  role,
+ role,
 }: {
-  role: UserRole | undefined
+ role: UserRole | undefined;
 }) {
-  return role === "admin"
+ return role === "admin";
 }
 
 export function canDeleteCourseSections({
-  role,
+ role,
 }: {
-  role: UserRole | undefined
+ role: UserRole | undefined;
 }) {
-  return role === "admin"
+ return role === "admin";
 }
 
-export const wherePublicCourseSections = eq(CourseSectionTable.status, "public")
+export const wherePublicCourseSections = eq(
+ CourseSectionTable.status,
+ "public"
+);

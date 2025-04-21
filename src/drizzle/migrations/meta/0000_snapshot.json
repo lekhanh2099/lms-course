@@ -87,12 +87,8 @@
           "name": "course_products_courseId_courses_id_fk",
           "tableFrom": "course_products",
           "tableTo": "courses",
-          "columnsFrom": [
-            "courseId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["courseId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "no action"
         },
@@ -100,12 +96,8 @@
           "name": "course_products_productId_products_id_fk",
           "tableFrom": "course_products",
           "tableTo": "products",
-          "columnsFrom": [
-            "productId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["productId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -113,10 +105,7 @@
       "compositePrimaryKeys": {
         "course_products_courseId_productId_pk": {
           "name": "course_products_courseId_productId_pk",
-          "columns": [
-            "courseId",
-            "productId"
-          ]
+          "columns": ["courseId", "productId"]
         }
       },
       "uniqueConstraints": {},
@@ -182,12 +171,8 @@
           "name": "course_sections_courseId_courses_id_fk",
           "tableFrom": "course_sections",
           "tableTo": "courses",
-          "columnsFrom": [
-            "courseId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["courseId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -268,12 +253,8 @@
           "name": "lessons_sectionId_course_sections_id_fk",
           "tableFrom": "lessons",
           "tableTo": "course_sections",
-          "columnsFrom": [
-            "sectionId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["sectionId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -418,12 +399,8 @@
           "name": "purchases_userId_users_id_fk",
           "tableFrom": "purchases",
           "tableTo": "users",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "no action"
         },
@@ -431,12 +408,8 @@
           "name": "purchases_productId_products_id_fk",
           "tableFrom": "purchases",
           "tableTo": "products",
-          "columnsFrom": [
-            "productId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["productId"],
+          "columnsTo": ["id"],
           "onDelete": "restrict",
           "onUpdate": "no action"
         }
@@ -446,9 +419,7 @@
         "purchases_stripeSessionId_unique": {
           "name": "purchases_stripeSessionId_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "stripeSessionId"
-          ]
+          "columns": ["stripeSessionId"]
         }
       },
       "policies": {},
@@ -526,9 +497,7 @@
         "users_clerkUserId_unique": {
           "name": "users_clerkUserId_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "clerkUserId"
-          ]
+          "columns": ["clerkUserId"]
         }
       },
       "policies": {},
@@ -572,12 +541,8 @@
           "name": "user_course_access_userId_users_id_fk",
           "tableFrom": "user_course_access",
           "tableTo": "users",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -585,12 +550,8 @@
           "name": "user_course_access_courseId_courses_id_fk",
           "tableFrom": "user_course_access",
           "tableTo": "courses",
-          "columnsFrom": [
-            "courseId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["courseId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -598,10 +559,7 @@
       "compositePrimaryKeys": {
         "user_course_access_userId_courseId_pk": {
           "name": "user_course_access_userId_courseId_pk",
-          "columns": [
-            "userId",
-            "courseId"
-          ]
+          "columns": ["userId", "courseId"]
         }
       },
       "uniqueConstraints": {},
@@ -646,12 +604,8 @@
           "name": "user_lesson_complete_userId_users_id_fk",
           "tableFrom": "user_lesson_complete",
           "tableTo": "users",
-          "columnsFrom": [
-            "userId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["userId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -659,12 +613,8 @@
           "name": "user_lesson_complete_lessonId_lessons_id_fk",
           "tableFrom": "user_lesson_complete",
           "tableTo": "lessons",
-          "columnsFrom": [
-            "lessonId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["lessonId"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -672,10 +622,7 @@
       "compositePrimaryKeys": {
         "user_lesson_complete_userId_lessonId_pk": {
           "name": "user_lesson_complete_userId_lessonId_pk",
-          "columns": [
-            "userId",
-            "lessonId"
-          ]
+          "columns": ["userId", "lessonId"]
         }
       },
       "uniqueConstraints": {},
@@ -688,35 +635,22 @@
     "public.course_section_status": {
       "name": "course_section_status",
       "schema": "public",
-      "values": [
-        "public",
-        "private"
-      ]
+      "values": ["public", "private"]
     },
     "public.lesson_status": {
       "name": "lesson_status",
       "schema": "public",
-      "values": [
-        "public",
-        "private",
-        "preview"
-      ]
+      "values": ["public", "private", "preview"]
     },
     "public.product_status": {
       "name": "product_status",
       "schema": "public",
-      "values": [
-        "public",
-        "private"
-      ]
+      "values": ["public", "private"]
     },
     "public.user_role": {
       "name": "user_role",
       "schema": "public",
-      "values": [
-        "user",
-        "admin"
-      ]
+      "values": ["user", "admin"]
     }
   },
   "schemas": {},
