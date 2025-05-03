@@ -6,15 +6,15 @@ import { UserCourseAccessTable } from "@/drizzle/schema/userCourseAccess";
 import { CourseSectionTable } from "@/drizzle/schema/courseSection";
 
 export const CourseTable = pgTable("courses", {
-  id,
-  name: text().notNull(),
-  description: text().notNull(),
-  createdAt,
-  updatedAt,
+ id,
+ name: text().notNull(),
+ description: text().notNull(),
+ createdAt,
+ updatedAt,
 });
 
 export const CourseRelationships = relations(CourseTable, ({ many }) => ({
-  courseProducts: many(CourseProductTable),
-  userCourseAccesses: many(UserCourseAccessTable),
-  courseSections: many(CourseSectionTable),
+ courseProducts: many(CourseProductTable),
+ userCourseAccesses: many(UserCourseAccessTable),
+ courseSections: many(CourseSectionTable),
 }));
