@@ -39,8 +39,9 @@ const isPublicRoute = createRouteMatcher([
 const isAdminRoute = createRouteMatcher(["/admin(.*)"]);
 
 // Main middleware
-export default clerkMiddleware(async (auth, req: NextRequest) => {
- const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
+export default clerkMiddleware(async (auth, req) => {
+ const ip =
+  req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
  const userAgent = req.headers.get("user-agent") || "";
 
  // Check for bots
@@ -65,10 +66,22 @@ export default clerkMiddleware(async (auth, req: NextRequest) => {
  if (!isPublicRoute(req)) {
   await auth.protect();
  }
-
- // Set country header (placeholder; replace with geoip logic if needed)
+ let country = "unknown";
  const headers = new Headers(req.headers);
- const country = "US"; // Placeholder; integrate geoip service for real country
+
+ // If IP is available, use a GeoIP service to detect the country
+
+ if (ip !== "unknown") {
+  try {
+   const response = await fetch(`http://ip-api.com/json/${ip}`);
+   const data = await response.json();
+   if (data.status === "success") {
+    country = data.countryCode; // e.g., 'US', 'VN', etc.
+   }
+  } catch (error) {
+   console.error("GeoIP lookup failed:", error);
+  }
+ }
  setUserCountryHeader(headers, country);
 
  return NextResponse.next({ request: { headers } });

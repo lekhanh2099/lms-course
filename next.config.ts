@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   dynamicIO: true,
   authInterrupts: true,
   optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
+  middlewarePrefetch: "strict",
  },
  eslint: {
   ignoreDuringBuilds: true,
